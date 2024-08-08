@@ -48,7 +48,8 @@ def get_response(question: str) -> str:
     prompt = f"""
     Vous êtes un chatbot de support client pour la plateforme KYRA. Un client a posé la question suivante : "{question}".
 
-    Voici les segments pertinents extraits des documents de la plateforme {relevant_segments}. En utilisant uniquement les informations fournies dans ces segments, reformulez-les pour créer une réponse précise, concise et facile à comprendre sous forme de paragraphe. Assurez-vous que les informations ne soient pas simplement copiées des segments fournis.
+    Voici les segments pertinents extraits des documents de la plateforme {relevant_segments}. 
+    En utilisant uniquement les informations fournies dans ces segments, reformulez-les pour créer une réponse précise, concise et facile à comprendre sous forme de paragraphe. Assurez-vous que les informations ne soient pas simplement copiées des segments fournis.
 
     Si la question n'est pas pertinente à la plateforme KYRA, répondez ainsi :
     "Je comprends que vous souhaitez savoir {question}. Cependant, les informations que je possède ne concernent que la plateforme KYRA."
