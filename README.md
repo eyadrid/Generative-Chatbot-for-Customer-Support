@@ -1,7 +1,7 @@
 # Generative Chat for Customer Support
 
 ## Description
-This project aims to develop a chatbot dedicated to customer support. The role of this chatbot is to efficiently and quickly respond to users' questions regarding the KYRA platform.
+This project aims to develop a chatbot dedicated to customer support. The chatbot's role is to efficiently and quickly respond to users' questions regarding the KYRA platform.
 
 ## Project Structure
 The project is structured as follows:
@@ -25,16 +25,17 @@ Generative Chat/
 │       ├── main.py              
 │       └── kyra.png             
 └── docker-compose.yml           
+```
 
 ## Project Components Overview
 
 - **Backend:**
-  - Manages the core functionalities, including data extraction, service logic, and the chatbot API.
+  - Manages core functionalities, including data extraction, service logic, and the chatbot API.
   - **Main directories:**
     - `src/`: Contains the main application logic.
     - `utils/`: Includes utility scripts for data handling and processing.
   - **Key files:**
-    - `controller.py`: Manages the routes and logic for the API.
+    - `controller.py`: Manages routes and logic for the API.
     - `main.py`: The entry point for the backend service.
     - `service.py`: Contains the core logic of the chatbot service.
     - `Dockerfile`: Used for containerizing the backend service.
@@ -72,7 +73,7 @@ To set up the project locally, follow these steps:
     docker-compose up --build
     ```
 
-    This command will build the Docker images as specified in the `Dockerfile` for both the backend and frontend services and start the containers.
+    This command builds the Docker images as specified in the `Dockerfile` for both the backend and frontend services and starts the containers.
 
 3. **Access the application:**
 
@@ -80,5 +81,5 @@ To set up the project locally, follow these steps:
 
 4. **Stop the application:**
 
-    To stop the running services, press `Ctrl+C` in the terminal where `docker-compose` is running. 
+    To stop the running services, press `Ctrl+C` in the terminal where `docker-compose` is running.
 
