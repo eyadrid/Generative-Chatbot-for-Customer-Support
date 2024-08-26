@@ -83,3 +83,17 @@ To set up the project locally, follow these steps:
 
     To stop the running services, press `Ctrl+C` in the terminal where `docker-compose` is running.
 
+
+## Usage
+
+1. **Enter a Customer Message:**
+   - Type your question or message about KYRA in the text area labeled "Ask a question about KYRA."
+
+2. **Trigger the Response:**
+   - Press the Enter button on your keyboard to send the message and trigger the LLM model to generate a response.
+
+3. **View the Response:**
+   - The generated response will be displayed in the interface, along with the previous conversation history.
+
+4. **Maintain Context:**
+   - Use the conversation history to maintain context and continuity in customer interactions.
