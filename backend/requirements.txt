@@ -9,3 +9,5 @@ langchain
 langdetect
 google-generativeai
 sentence-transformers
+faiss-cpu
+fastapi[standard]

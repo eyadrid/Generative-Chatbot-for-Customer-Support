@@ -3,7 +3,7 @@ from service import get_response
 
 router = APIRouter()
 
-@router.get("/api/version1/v1/question")
+@router.get("/api/v1/question")
 def generate_response(question: str):
     try:
         response_text = get_response(question)

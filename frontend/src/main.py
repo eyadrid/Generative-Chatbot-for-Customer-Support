@@ -1,12 +1,12 @@
 import streamlit as st
 import requests
 
-API_URL = "http://localhost:8000/api/version1/v1/question"
+API_URL = "http://backend:8000/api/v1/question"
 
 st.set_page_config(page_title="KYRA Chatbot", layout='wide')
 st.title(" KYRA Chatbot")
 st.caption("🤖 Your KYRA Assistant: Quick Answers, Anytime, Anywhere!")
-#st.logo("./kyra.png", icon_image="kyra.png")
+st.logo("./src/kyra.png")
 
 
 def handle_userinput(user_question):

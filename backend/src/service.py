@@ -37,7 +37,7 @@ def fetch_and_segment_data():
 documents = fetch_and_segment_data()
 db = FAISS.from_documents(documents, embeddings_model)
 
-genai.configure(api_key=os.getenv("API_KEY"))
+genai.configure(api_key="AIzaSyAf3PdlzRLj2wwuXovZ8TRJPZBRxsASJ0A")
 model = genai.GenerativeModel('gemini-1.5-flash')
 
 def get_response(question: str) -> str:
