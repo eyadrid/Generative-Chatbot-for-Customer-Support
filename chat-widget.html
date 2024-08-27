@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Widget with Streamlit</title>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome for Messenger Icon -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+    <!-- Chat Widget -->
+    <div id="chat-widget" class="fixed bottom-6 right-6 z-50">
+        <!-- Chat Button -->
+        <div id="chat-icon" class="cursor-pointer bg-blue-600 text-white rounded-full p-4 shadow-lg hover:bg-blue-700">
+            <i class="fab fa-facebook-messenger text-2xl"></i>
+        </div>
+
+        <!-- Chat Box (Hidden by Default) -->
+        <div id="chat-box" class="hidden fixed bottom-20 right-6 w-80 bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+                <h2 class="text-lg font-semibold">Chat with us</h2>
+                <button id="close-chat" class="text-white focus:outline-none">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-4 max-h-96 overflow-y-auto">
+                <!-- Embed Streamlit App -->
+                <iframe src="http://localhost:8501/?embed=true" style="height: 350px; width: 100%; border: none;"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        document.getElementById('chat-icon').addEventListener('click', function () {
+            document.getElementById('chat-box').classList.toggle('hidden');
+        });
+
+        document.getElementById('close-chat').addEventListener('click', function () {
+            document.getElementById('chat-box').classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
