@@ -1,13 +1,21 @@
 import streamlit as st
 import requests
+import os
+from dotenv import load_dotenv
 
-API_URL = "http://backend:8000/api/v1/question"
+load_dotenv()
 
-st.set_page_config(page_title="KYRA Chatbot", layout='wide')
-st.title(" KYRA Chatbot")
-st.caption("🤖 Your KYRA Assistant: Quick Answers, Anytime, Anywhere!")
-st.logo("./src/kyra.png")
+API_URL = os.getenv("API_URL")
+LOGO_PATH = os.getenv("LOGO_PATH")
 
+PAGE_TITLE = "KYRA Chatbot"
+CAPTION = "🤖 Your KYRA Assistant: Quick Answers, Anytime, Anywhere!"
+ERROR_MESSAGE = "An error occurred: {error}"
+
+st.set_page_config(page_title=PAGE_TITLE, layout='wide')
+st.title(PAGE_TITLE)
+st.caption(CAPTION)
+st.logo(LOGO_PATH) 
 
 def handle_userinput(user_question):
     try:
@@ -24,11 +32,9 @@ def handle_userinput(user_question):
 
         for msg in st.session_state.messages:
             st.chat_message(msg["role"]).write(msg["content"])
-
-    except Exception as e:
-        error_message = f"An error occurred: {str(e)}"
+    except Exception:
+        error_message = "Un problème est survenu. Veuillez essayer de poser à nouveau votre question."
         st.session_state.messages.append({"role": "assistant", "content": error_message})
-
 
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []

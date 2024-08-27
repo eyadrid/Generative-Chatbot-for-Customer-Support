@@ -75,3 +75,9 @@ def get_response(question: str) -> str:
             """
             response = model.generate_content(prompt).text
     return response
+
+
+
+
+
+
