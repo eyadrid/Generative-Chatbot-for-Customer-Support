@@ -8,6 +8,41 @@ load_dotenv()
 API_URL = os.getenv("API_URL")
 PAGE_TITLE = "KYRA Chatbot"
 st.set_page_config(page_title=PAGE_TITLE, layout='wide')
+hide_streamlit_style = """
+<style>
+    #root > div:nth-child(1) > div > div > div > div > section > div {padding-top: 0rem;}
+    div[data-testid="stToolbar"] {
+        visibility: hidden;
+        height: 0%;
+        position: fixed;
+    }
+    div[data-testid="stDecoration"] {
+        visibility: hidden;
+        height: 0%;
+        position: fixed;
+    }
+    div[data-testid="stStatusWidget"] {
+        visibility: hidden;
+        height: 0%;
+        position: fixed;
+    }
+    #MainMenu {
+        visibility: hidden;
+        height: 0%;
+    }
+    header {
+        visibility: hidden;
+        height: 0%;
+    }
+    footer {
+        visibility: hidden;
+        height: 0%;
+    }
+
+</style>
+
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 message = st.chat_message("assistant")
 message.write("Bonjour 👋 ! Comment puis-je vous aider aujourd'hui ?")
