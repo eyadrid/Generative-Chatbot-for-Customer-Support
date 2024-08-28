@@ -6,16 +6,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 API_URL = os.getenv("API_URL")
-LOGO_PATH = os.getenv("LOGO_PATH")
-
 PAGE_TITLE = "KYRA Chatbot"
-CAPTION = "🤖 Your KYRA Assistant: Quick Answers, Anytime, Anywhere!"
-ERROR_MESSAGE = "An error occurred: {error}"
-
 st.set_page_config(page_title=PAGE_TITLE, layout='wide')
-st.title(PAGE_TITLE)
-st.caption(CAPTION)
-st.logo(LOGO_PATH) 
+
+message = st.chat_message("assistant")
+message.write("Bonjour 👋 ! Comment puis-je vous aider aujourd'hui ?")
 
 def handle_userinput(user_question):
     try:
@@ -23,7 +18,7 @@ def handle_userinput(user_question):
         response_data = response.json()
 
         if 'error' in response_data:
-            response_text = f"Error: {response_data['error']}"
+            response_text = "Un problème est survenu. Veuillez essayer de poser à nouveau votre question."
         else:
             response_text = response_data['response']
 
