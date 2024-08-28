@@ -45,7 +45,7 @@ hide_streamlit_style = """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 message = st.chat_message("assistant")
-message.write("Bonjour 👋 ! Comment puis-je vous aider aujourd'hui ?")
+message.write("Hello 👋 ! How can I assist you today?")
 
 def handle_userinput(user_question):
     try:
