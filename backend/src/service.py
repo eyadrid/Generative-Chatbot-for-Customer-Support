@@ -10,6 +10,7 @@ from langdetect import detect
 
 load_dotenv()  
 
+# Initialiser le modèle d'embeddings
 embeddings_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
 
 urls = [
@@ -21,6 +22,7 @@ urls = [
     "https://kyra-docs.data-tricks.net/fr/docs/documentation/tiers"
 ]
 
+# Fonction pour extraire et segmenter les données à partir des URLs
 def fetch_and_segment_data():
     all_segments = []
     for url in urls:
@@ -37,6 +39,7 @@ def fetch_and_segment_data():
 documents = fetch_and_segment_data()
 db = FAISS.from_documents(documents, embeddings_model)
 
+# Configurer l'API Generative AI de Google pour la génération de texte
 genai.configure(api_key="AIzaSyAf3PdlzRLj2wwuXovZ8TRJPZBRxsASJ0A")
 model = genai.GenerativeModel('gemini-1.5-flash')
 
