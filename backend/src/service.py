@@ -14,12 +14,7 @@ load_dotenv()
 embeddings_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
 
 urls = [
-    "https://kyra-docs.data-tricks.net/docs/documentation/actors",
-    "https://kyra-docs.data-tricks.net/docs/documentation/tiers",
-    "https://kyra-docs.data-tricks.net/docs/documentation/login",
-    "https://kyra-docs.data-tricks.net/fr/docs/documentation/login",
-    "https://kyra-docs.data-tricks.net/fr/docs/documentation/actors",
-    "https://kyra-docs.data-tricks.net/fr/docs/documentation/tiers"
+    #List of URLS
 ]
 
 # Fonction pour extraire et segmenter les données à partir des URLs
@@ -40,7 +35,7 @@ documents = fetch_and_segment_data()
 db = FAISS.from_documents(documents, embeddings_model)
 
 # Configurer l'API Generative AI de Google pour la génération de texte
-genai.configure(api_key="AIzaSyAf3PdlzRLj2wwuXovZ8TRJPZBRxsASJ0A")
+genai.configure(api_key="Gemini-API-KEY")
 model = genai.GenerativeModel('gemini-1.5-flash')
 
 def get_response(question: str) -> str:
